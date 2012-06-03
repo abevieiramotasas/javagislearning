@@ -120,7 +120,7 @@ public class ValidationUtil {
 	}
 
 	public static String[] validatesKey(String hashed) {
-		String[] values = hashed.split(EncryptUtil.HASHED_DELIMITER);
+		String[] values = hashed.split(EncryptUtil.HASHED_DELIMITER_REGEX);
 		if (values.length != 2) {
 			throw new ValidationException(ValidationErrors.INVALID,
 					ValidationFields.KEY);

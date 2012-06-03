@@ -15,7 +15,7 @@ public class LoggedUtil {
 			throw new ValidationException(ValidationErrors.INVALID,
 					ValidationFields.KEY);
 		}
-		if (!values.equals(EncryptUtil.makeHashed(String.valueOf(u.getId()),
+		if (!key.equals(EncryptUtil.makeHashed(String.valueOf(u.getId()),
 				u.getSalt()))) {
 			throw new ValidationException(ValidationErrors.INVALID,
 					ValidationFields.KEY);
