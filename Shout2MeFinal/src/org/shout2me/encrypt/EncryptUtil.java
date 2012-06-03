@@ -11,6 +11,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class EncryptUtil {
 
 	public static final String HASHED_DELIMITER = "|";
+	public static final String HASHED_DELIMITER_REGEX = "\\|";
 	private static SecureRandom random = new SecureRandom();
 
 	public static String generateRandomString() {
