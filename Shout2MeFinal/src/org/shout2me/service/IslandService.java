@@ -57,7 +57,7 @@ public class IslandService {
 		i.setOwner(loggedUser);
 		IslandDAO i_dao = new IslandDAO();
 		i_dao.create(i);
-		return Response.status(200).entity(i.getId()).build();
+		return Response.status(200).entity(String.valueOf(i.getId())).build();
 	}
 
 	@GET
