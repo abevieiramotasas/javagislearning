@@ -7,7 +7,6 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -31,12 +30,12 @@ public class IslandService {
 
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/{key}/create")
+	@Path("/create")
 	public Response create(@FormParam("name") String name,
 			@FormParam("longitude") Double longitude,
 			@FormParam("latitude") Double latitude,
 			@FormParam("description") String description,
-			@PathParam("key") String key) {
+			@FormParam("key") String key) {
 		// validations
 		ValidationUtil.validatesIslandName(name);
 		ValidationUtil.validatesLongitude(longitude);
