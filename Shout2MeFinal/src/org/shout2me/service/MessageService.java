@@ -7,7 +7,6 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -30,11 +29,11 @@ public class MessageService {
 
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/{key}/create")
+	@Path("/create")
 	public Response create(@FormParam("text") String text,
 			@FormParam("topic") String topic,
 			@FormParam("destination_id") Long destination_id,
-			@PathParam("key") String key) {
+			@FormParam("key") String key) {
 		// validations
 		ValidationUtil.validatesText(text);
 		ValidationUtil.validatesTopic(topic);
